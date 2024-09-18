@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="CAGE">
+  <meta name="keywords" content="CAGE, Robotics, Robot Learning, Imitation Learning, Generalization">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CAGE: Causal Attention Enables Data-Efficient Generalizable Robotic Manipulation</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/cage.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://cage-policy.github.io/">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://rh20t.github.io/">
+            RH20T
+          </a>
+          <a class="navbar-item" href="https://airexo.github.io/">
+            AirExo
+          </a>
+          <a class="navbar-item" href="https://rise-policy.github.io/">
+            RISE
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title"><img src="static/images/cage.png" style="width:40px"> <text style="color:rgb(66, 106, 179)">CAGE</text></h1>
+
+
+          <h2 class="title is-2 publication-title"><text style="color:rgb(66, 106, 179)">C</text>ausal <text style="color:rgb(66, 106, 179)">A</text>ttention Enables Data-Efficient <text style="color:rgb(66, 106, 179)">Ge</text>neralizable Robotic Manipulation </h2>
+          
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://github.com/Xiashangning">Shangning Xia</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://tonyfang.net/">Hongjie Fang</a><sup>1,2</sup>,</span>
+            <span class="author-block">
+              <a href="https://fang-haoshu.github.io/">Hao-Shu Fang</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://www.mvig.org/">Cewu Lu</a><sup>1,2</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <sup>1</sup><span class="author-block">Shanghai Jiao Tong University</span>, <sup>2</sup><span class="author-block">Shanghai Artificial Intelligence Laboratory</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper (coming soon)</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/cage-policy/CAGE"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code (coming soon)</span>
+                  </a>
+              </span>
+              <!-- Data Link. 
+              <span class="link-block">
+                <a href="https://drive.google.com/drive/folders/1eIjPKf_g-1DjYqMTYjSzVBixjnveyD89?usp=sharing"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Sample Data</span>
+                </a>
+              </span>  
+              -->      
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img id="teaser" src="static/images/teaser.jpg"></img>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+Generalization in robotic manipulation remains a critical challenge, particularly when scaling to unseen environments with limited demonstrations. This paper introduces CAGE, a novel robotic manipulation policy designed to overcome these generalization barriers by integrating a causal attention mechanism. CAGE utilizes the powerful feature extraction capabilities of the DINOv2 foundation model, combined with LoRA fine-tuning for efficient image encoding. The policy further employs a causal Perceiver for compressing tokens and a diffusion-based action prediction head with attention mechanisms to enhance task-specific fine-grained conditioning. With as few as 50 demonstrations in a single training environment, CAGE achieves robust generalization across diverse visual changes in objects, backgrounds, camera views, and all three combined. Extensive experiments validate that CAGE significantly outperforms existing state-of-the-art approaches in various manipulation tasks, especially under significant distribution shifts. This work makes a step forward in developing data-efficient, scalable, and generalizable robotic manipulation policies.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Method</h2>
+          <img id="model" src="static/images/model.jpg"></img>
+          <br><br>
+          <div class="content has-text-justified">
+            <p>
+              CAGE is composed of three parts: (1) observation images are passed to <i>DINOv2 image encoder (LoRA fine-tuning)</i> to obtain observation tokens. (2) The concatenated observation tokens are compressed by <i>Causal Observation Perceiver</i>. The learned tokens, along with the timestep embeddings serve as the conditioning for noise prediction. (3) The <i>Attn-UNet</i> takes as input a sequence of noisy actions prefixed by proprioceptions and outputs noise estimation, following standard diffusion procedure.
+            </p>  
+          </div>
+        </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Evaluations</h2>
+        <img id="model" src="static/images/task.jpg"></img>
+        <div class="content has-text-justified">
+          <p>
+            To evaluate the generalization ability of the policy, we design 3 tasks with <i>generalizable skills</i>: <b><i>Transport</i></b>, <b><i>Dumping</i></b> and <b><i>Chopping</i></b>. With a special focus on generalization, our tasks are designed at the skill level, so we do not impose strict requirements on the objects, and they can be substituted with any similar items.
+            We evaluate CAGE and various baselines (2D: <a href="https://diffusion-policy.cs.columbia.edu/">Diffusion Policy</a>; 3D: <a href="https://rise-policy.github.io/">RISE</a>) on these tasks.
+            
+            In the following sections, all the videos are <b>autonomous rollouts</b> of the CAGE policy.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <div class="columns is-centered has-text-centered">
+    <h2 class="title">BibTeX</h2>
+    </div>
+    <pre><code>
+    </code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>. Modified upon original <a href="https://nerfies.github.io/"> Nerfies </a> website (<a href="https://github.com/nerfies/nerfies.github.io">source</a>).
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
