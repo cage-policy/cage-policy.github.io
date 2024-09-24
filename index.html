@@ -185,11 +185,278 @@ Generalization in robotic manipulation remains a critical challenge, particularl
         <div class="content has-text-justified">
           <p>
             To evaluate the generalization ability of the policy, we design 3 tasks with <i>generalizable skills</i>: <b><i>Transport</i></b>, <b><i>Dumping</i></b> and <b><i>Chopping</i></b>. With a special focus on generalization, our tasks are designed at the skill level, so we do not impose strict requirements on the objects, and they can be substituted with any similar items.
-            We evaluate CAGE and various baselines (2D: <a href="https://diffusion-policy.cs.columbia.edu/">Diffusion Policy</a>; 3D: <a href="https://rise-policy.github.io/">RISE</a>) on these tasks.
-            
+            We evaluate CAGE and various baselines (2D: <a href="https://diffusion-policy.cs.columbia.edu/">Diffusion Policy (DP)</a>; 3D: <a href="https://rise-policy.github.io/">RISE</a>) on these tasks.
+          </p>
+          <p>
+            We design three levels of generalization in evaluations: 
+            <ul>
+              <li><b>Base</b> refers to evaluations in <i>the same environment</i> as the training data (with seen objects, the same background, and the same camera views). </li>
+              <li> <b>L1 generalization</b> denotes <i>a similar environment</i> with the variation in one of the previous three aspects, which we refer to as <b>L1 (bg)</b>, <b>L1 (obj)</b> and <b>L1 (cam)</b> respectively;</li>
+              <li> <b>L2 generalization</b> allows variations on all three aspects, resulting in <i>an unseen environment</i> for the policy. </li>
+            </ul>
+          </p>
+          <p>
             In the following sections, all the videos are <b>autonomous rollouts</b> of the CAGE policy.
           </p>
         </div>
+
+
+        <h2 class="title is-3">Base Evaluation Results</h2>
+        <div class="content has-text-justified">
+          <p>
+            <div class="columns is-centered has-text-centered">
+              <img src="static/images/base-results.png"></img>
+            </div>
+          </p>
+        </div>
+
+
+        <div class="content has-text-justified">
+          <p>
+            <div class="columns is-centered has-text-centered">
+              <video id="transport-base-1" autoplay muted loop playsinline style="width:220px">
+                <source src="./static/videos/base/transport-1.mp4"
+                        type="video/mp4">
+              </video>
+              &nbsp;
+              <video id="dumping-base-1" autoplay muted loop playsinline style="width:220px">
+                <source src="./static/videos/base/dumping-1.mp4"
+                        type="video/mp4">
+              </video>
+              &nbsp;
+              <video id="chopping-base-1" autoplay muted loop playsinline style="width:220px">
+                <source src="./static/videos/base/chopping-1.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+          </p>
+          <p>
+            <div class="columns is-centered has-text-centered">
+              <video id="transport-base-2" autoplay muted loop playsinline style="width:220px">
+                <source src="./static/videos/base/transport-2.mp4"
+                        type="video/mp4">
+              </video>
+              &nbsp;
+              <video id="dumping-base-2" autoplay muted loop playsinline style="width:220px">
+                <source src="./static/videos/base/dumping-2.mp4"
+                        type="video/mp4">
+              </video>
+              &nbsp;
+              <video id="chopping-base-2" autoplay muted loop playsinline style="width:220px">
+                <source src="./static/videos/base/chopping-2.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+          </p>
+        </div>
+        <br>
+
+        <h2 class="title is-3">L1 Generalization Evaluation Results</h2>
+        <div class="content has-text-justified">
+          <p>
+            <div class="columns is-centered has-text-centered">
+              <img src="static/images/l1-results.png"></img>
+            </div>
+          </p>
+        </div>
+        
+        <h5 class="title is-5">Background - L1 (bg)</h5>
+        <div class="content has-text-justified">
+          <p>
+            <div class="columns is-centered has-text-centered">
+              <video id="transport-l1bg-1" autoplay muted loop playsinline style="width:220px">
+                <source src="./static/videos/l1bg/transport-1.mp4"
+                        type="video/mp4">
+              </video>
+              &nbsp;
+              <video id="dumping-l1bg-1" autoplay muted loop playsinline style="width:220px">
+                <source src="./static/videos/l1bg/dumping-1.mp4"
+                        type="video/mp4">
+              </video>
+              &nbsp;
+              <video id="chopping-l1bg-1" autoplay muted loop playsinline style="width:220px">
+                <source src="./static/videos/l1bg/chopping-1.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+          </p>
+        </div>
+
+        <h5 class="title is-5">Object - L1 (obj)</h5>
+        <div class="content has-text-justified">
+          <p>
+            <div class="columns is-centered has-text-centered">
+              <video id="transport-l1obj-1" autoplay muted loop playsinline style="width:220px">
+                <source src="./static/videos/l1obj/transport-1.mp4"
+                        type="video/mp4">
+              </video>
+              &nbsp;
+              <video id="dumping-l1obj-1" autoplay muted loop playsinline style="width:220px">
+                <source src="./static/videos/l1obj/dumping-1.mp4"
+                        type="video/mp4">
+              </video>
+              &nbsp;
+              <video id="chopping-l1obj-1" autoplay muted loop playsinline style="width:220px">
+                <source src="./static/videos/l1obj/chopping-1.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+          </p>
+          <p>
+            <div class="columns is-centered has-text-centered">
+              <video id="transport-l1obj-2" autoplay muted loop playsinline style="width:220px">
+                <source src="./static/videos/l1obj/transport-2.mp4"
+                        type="video/mp4">
+              </video>
+              &nbsp;
+              <video id="dumping-l1obj-2" autoplay muted loop playsinline style="width:220px">
+                <source src="./static/videos/l1obj/dumping-2.mp4"
+                        type="video/mp4">
+              </video>
+              &nbsp;
+              <video id="chopping-l1obj-2" autoplay muted loop playsinline style="width:220px">
+                <source src="./static/videos/l1obj/chopping-2.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+          </p>
+        </div>
+
+        <h5 class="title is-5">Camera View - L1 (cam)</h5>
+        <div class="content has-text-justified">
+          <p>
+            <div class="columns is-centered has-text-centered">
+              <video id="transport-l1cam-wo" autoplay muted loop playsinline style="width:220px">
+                <source src="./static/videos/l1cam/transport-wo.mp4"
+                        type="video/mp4">
+              </video>
+              &nbsp;
+              <video id="dumping-l1cam-wo" autoplay muted loop playsinline style="width:220px">
+                <source src="./static/videos/l1cam/dumping-wo.mp4"
+                        type="video/mp4">
+              </video>
+              &nbsp;
+              <video id="chopping-l1cam-wo" autoplay muted loop playsinline style="width:220px">
+                <source src="./static/videos/l1cam/chopping-wo.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+          </p>
+          <p>
+            <div class="columns is-centered has-text-centered">
+              <video id="transport-l1cam-w" autoplay muted loop playsinline style="width:220px">
+                <source src="./static/videos/l1cam/transport-w.mp4"
+                        type="video/mp4">
+              </video>
+              &nbsp;
+              <video id="dumping-l1cam-w" autoplay muted loop playsinline style="width:220px">
+                <source src="./static/videos/l1cam/dumping-w.mp4"
+                        type="video/mp4">
+              </video>
+              &nbsp;
+              <video id="chopping-l1cam-w" autoplay muted loop playsinline style="width:220px">
+                <source src="./static/videos/l1cam/chopping-w.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+          </p>
+        </div>
+        <br>
+
+        <h2 class="title is-3">L2 Generalization Evaluation Results</h2>
+        <div class="content has-text-justified">
+          <p>
+            <div class="columns is-centered has-text-centered">
+              <img src="static/images/l2-results.png"></img>
+            </div>
+          </p>
+        </div>
+
+        <div class="content has-text-justified">
+          <p>
+            <b>CAGE Rollouts</b>.
+          </p>
+          <p>
+            <div class="columns is-centered has-text-centered">
+              <video id="transport-l2-1" autoplay muted loop playsinline style="width:220px">
+                <source src="./static/videos/l2/transport-1.mp4"
+                        type="video/mp4">
+              </video>
+              &nbsp;
+              <video id="dumping-l2-1" autoplay muted loop playsinline style="width:220px">
+                <source src="./static/videos/l2/dumping-1.mp4"
+                        type="video/mp4">
+              </video>
+              &nbsp;
+              <video id="chopping-l2-1" autoplay muted loop playsinline style="width:220px">
+                <source src="./static/videos/l2/chopping-1.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+          </p>
+          <p>
+            <div class="columns is-centered has-text-centered">
+              <video id="transport-l2-2" autoplay muted loop playsinline style="width:220px">
+                <source src="./static/videos/l2/transport-2.mp4"
+                        type="video/mp4">
+              </video>
+              &nbsp;
+              <video id="dumping-l2-2" autoplay muted loop playsinline style="width:220px">
+                <source src="./static/videos/l2/dumping-2.mp4"
+                        type="video/mp4">
+              </video>
+              &nbsp;
+              <video id="chopping-l2-2" autoplay muted loop playsinline style="width:220px">
+                <source src="./static/videos/l2/chopping-2.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+          </p>
+          <p>
+            <b>RISE Rollouts</b>.
+          </p>
+          <p>
+            <div class="columns is-centered has-text-centered">
+              <video id="transport-l2-rise" autoplay muted loop playsinline style="width:220px">
+                <source src="./static/videos/l2/transport-rise.mp4"
+                        type="video/mp4">
+              </video>
+              &nbsp;
+              <video id="dumping-l2-rise" autoplay muted loop playsinline style="width:220px">
+                <source src="./static/videos/l2/dumping-rise.mp4"
+                        type="video/mp4">
+              </video>
+              &nbsp;
+              <video id="chopping-l2-rise" autoplay muted loop playsinline style="width:220px">
+                <source src="./static/videos/l2/chopping-rise.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+          </p>
+          <p>
+            <b>Diffusion Policy (DP) Rollouts</b>.
+          </p>
+          <p>
+            <div class="columns is-centered has-text-centered">
+              <video id="transport-l2-dp" autoplay muted loop playsinline style="width:220px">
+                <source src="./static/videos/l2/transport-dp.mp4"
+                        type="video/mp4">
+              </video>
+              &nbsp;
+              <video id="dumping-l2-dp" autoplay muted loop playsinline style="width:220px">
+                <source src="./static/videos/l2/dumping-dp.mp4"
+                        type="video/mp4">
+              </video>
+              &nbsp;
+              <video id="chopping-l2-dp" autoplay muted loop playsinline style="width:220px">
+                <source src="./static/videos/l2/chopping-dp.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+          </p>
+        </div>
+        <br>
+        
       </div>
     </div>
   </div>
