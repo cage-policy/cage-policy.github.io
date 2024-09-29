@@ -145,7 +145,7 @@
   <div class="container is-max-desktop">
     <div class="hero-body">
       <img id="teaser" src="static/images/teaser.jpg"></img>
-      CAGE is a data-efficient generalizable robotic manipulation policy. With <b>less than 50 demonstrations in the training environment</b>, CAGE can effectively <b>generalize to similar/unseen environments</b> with different levels of distribution shifts.
+      CAGE is a data-efficient generalizable robotic manipulation policy. With <b>less than 50 demonstrations in the mono-distributed training environment</b>, CAGE can effectively <b>generalize to similar and unseen environments</b> with different levels of distribution shifts.
     </div>
   </div>
 </section>
@@ -176,7 +176,7 @@ Generalization in robotic manipulation remains a critical challenge, particularl
           <br><br>
           <div class="content has-text-justified">
             <p>
-              CAGE is composed of three parts: (1) observation images are passed to <i>DINOv2 image encoder (LoRA fine-tuning)</i> to obtain observation tokens. (2) The concatenated observation tokens are compressed by <i>Causal Observation Perceiver</i>. The learned tokens, along with the timestep embeddings serve as the conditioning for noise prediction. (3) The <i>Attn-UNet</i> takes as input a sequence of noisy actions prefixed by proprioceptions and outputs noise estimation, following standard diffusion procedure.
+              CAGE is composed of three parts: (1) observation images are passed to <i>DINOv2 image encoder (LoRA fine-tuning)</i> to obtain stacks of observation tokens. (2) The concatenated observation tokens are compressed by <i>Causal Observation Perceiver</i>. The learned tokens, along with the timestep embeddings serve as the conditioning for noise prediction. (3) The <i>Attn-UNet</i> takes as input a sequence of noisy actions prefixed by proprioceptions and outputs noise estimation, following standard diffusion procedure.
             </p>  
           </div>
         </div>
@@ -197,15 +197,15 @@ Generalization in robotic manipulation remains a critical challenge, particularl
             We evaluate CAGE and various baselines (2D: <a href="https://diffusion-policy.cs.columbia.edu/">Diffusion Policy (DP)</a>; 3D: <a href="https://rise-policy.github.io/">RISE</a>) on these tasks.
           </p>
           <p>
-            We design three levels of generalization in evaluations: 
+            Each policy is evaluated through three levels of distribution shifts to fully assess its generalizability in real-world:
             <ul>
-              <li><b>Base</b> refers to evaluations in <i>the same environment</i> as the training data (with seen objects, the same background, and the same camera views). </li>
-              <li> <b>L1 generalization</b> denotes <i>a similar environment</i> with the variation in one of the previous three aspects, which we refer to as <b>L1 (bg)</b>, <b>L1 (obj)</b> and <b>L1 (cam)</b> respectively;</li>
-              <li> <b>L2 generalization</b> allows variations on all three aspects, resulting in <i>an unseen environment</i> for the policy. </li>
+              <li><b>Base</b> refers to evaluations in <i>the same environment</i> as the training data (No distribution shift with seen objects, the same background, and the same camera views). </li>
+              <li> <b>L1 generalization</b> denotes <i>a similar environment</i> with the variation in one of the previous three aspects, which we refer to as <b>L1 (bg)</b>, <b>L1 (obj)</b> and <b>L1 (cam)</b> respectively. (Small distribution shift)</li>
+              <li> <b>L2 generalization</b> allows variations on all three aspects, resulting in <i>an unseen environment</i> for the policy. (Large distribution shift)</li>
             </ul>
           </p>
           <p>
-            In the following sections, all the videos are <b>autonomous rollouts</b> of the CAGE policy.
+            In the following sections, all the videos are <b>autonomous rollouts</b> of the CAGE policy with <b>10Hz parallel execution</b>.
           </p>
         </div>
 
@@ -481,13 +481,24 @@ Generalization in robotic manipulation remains a critical challenge, particularl
               </video>
             </div>
           </p>
+          <p>
+            <b>Complete Evaluation Video for <i>Transport</i></b>.
+          </p>
+          <p>
+            <div class="columns is-centered has-text-centered">
+              <video id="transport-l2-full" autoplay muted loop playsinline style="width:480px">
+                <source src="./static/videos/l2/transport-full.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+          </p>
         </div>
         <br>
 
         <h2 class="title is-3">Failure Cases</h2>
         <div class="content has-text-justified">
           <p>
-            We also show some failure cases of the CAGE policy here, mainly due to inaccuracies in predicted actions, which can be amplified and accumulated in relative action representation.
+            We also show some failure cases in L1 and L2 evaluations of the CAGE policy here. Most failures are due to inaccuracies in predicted actions, which can be amplified and accumulated by real-time execution with relative action representation.
           </p>
           <br>
           <p>
