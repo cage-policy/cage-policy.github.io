@@ -144,8 +144,8 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <img id="teaser" src="static/images/teaser.jpg"></img>
-      CAGE is a data-efficient generalizable robotic manipulation policy. With <b>less than 50 demonstrations in the mono-distributed training environment</b>, CAGE can effectively <b>generalize to similar and unseen environments</b> with different levels of distribution shifts.
+      <img id="teaser" src="static/images/teaser.png"></img>
+      CAGE is a data-efficient generalizable robotic manipulation policy. With <b>approximately 50 mono-distributed demonstrations</b>, CAGE can effectively complete the task in test environments <b>with different levels of distribution shifts</b>: training environment (L0), similar environment (L1), and unseen environment (L2). Experiments demonstrate that CAGE generalizes well to L1 and L2 environments and significantly outperforms prior works.
     </div>
   </div>
 </section>
@@ -158,7 +158,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-Generalization in robotic manipulation remains a critical challenge, particularly when scaling to unseen environments with limited demonstrations. This paper introduces CAGE, a novel robotic manipulation policy designed to overcome these generalization barriers by integrating a causal attention mechanism. CAGE utilizes the powerful feature extraction capabilities of the DINOv2 foundation model, combined with LoRA fine-tuning for efficient image encoding. The policy further employs a causal Perceiver for compressing tokens and a diffusion-based action prediction head with attention mechanisms to enhance task-specific fine-grained conditioning. With as few as 50 demonstrations in a single training environment, CAGE achieves robust generalization across diverse visual changes in objects, backgrounds, camera views, and all three combined. Extensive experiments validate that CAGE significantly outperforms existing state-of-the-art approaches in various manipulation tasks, especially under significant distribution shifts. This work makes a step forward in developing data-efficient, scalable, and generalizable robotic manipulation policies.
+Generalization in robotic manipulation remains a critical challenge, particularly when scaling to unseen environments with limited demonstrations. This paper introduces CAGE, a novel robotic manipulation policy designed to overcome these generalization barriers by integrating a causal attention mechanism. CAGE utilizes the powerful feature extraction capabilities of the DINOv2 foundation model, combined with LoRA fine-tuning for efficient image encoding. The policy further employs a causal Perceiver for compressing tokens and a diffusion-based action prediction head with attention mechanisms to enhance task-specific fine-grained conditioning. With as few as 50 demonstrations from a single training environment, CAGE achieves robust generalization across diverse visual changes in objects, backgrounds, and viewpoints. Extensive experiments validate that <b>CAGE significantly outperforms existing state-of-the-art RGB/RGB-D approaches in various manipulation tasks, especially under large distribution shifts</b>. In similar environments, CAGE offers an average of <b>42% increase</b> in task completion rate. While all baselines fail to execute the task in unseen environments, CAGE manages to obtain <b>a 43% completion rate and a 51% success rate</b> in average, making a huge step towards practical deployment of robots in real-world settings.
           </p>
         </div>
       </div>
@@ -190,7 +190,7 @@ Generalization in robotic manipulation remains a critical challenge, particularl
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Evaluations</h2>
-        <img id="model" src="static/images/task.jpg"></img>
+        <img id="model" src="static/images/task.png"></img>
         <div class="content has-text-justified">
           <p>
             To evaluate the generalization ability of the policy, we design 3 tasks with <i>generalizable skills</i>: <b><i>Transport</i></b>, <b><i>Dumping</i></b> and <b><i>Chopping</i></b>. With a special focus on generalization, our tasks are designed at the skill level, so we do not impose strict requirements on the objects, and they can be substituted with any similar items.
@@ -199,7 +199,7 @@ Generalization in robotic manipulation remains a critical challenge, particularl
           <p>
             Each policy is evaluated through three levels of distribution shifts to fully assess its generalizability in real-world:
             <ul>
-              <li><b>Base</b> refers to evaluations in <i>the same environment</i> as the training data (No distribution shift with seen objects, the same background, and the same camera views). </li>
+              <li><b>L0 generalization</b> refers to evaluations in <i>the same environment</i> as the training data (No distribution shift with seen objects, the same background, and the same camera views). </li>
               <li> <b>L1 generalization</b> denotes <i>a similar environment</i> with the variation in one of the previous three aspects, which we refer to as <b>L1 (bg)</b>, <b>L1 (obj)</b> and <b>L1 (cam)</b> respectively. (Small distribution shift)</li>
               <li> <b>L2 generalization</b> allows variations on all three aspects, resulting in <i>an unseen environment</i> for the policy. (Large distribution shift)</li>
             </ul>
@@ -210,7 +210,7 @@ Generalization in robotic manipulation remains a critical challenge, particularl
         </div>
 
 
-        <h2 class="title is-3">Base Evaluation Results</h2>
+        <h2 class="title is-3">L0 Evaluation Results</h2>
         <div class="content has-text-justified">
           <p>
             <div class="columns is-centered has-text-centered">
